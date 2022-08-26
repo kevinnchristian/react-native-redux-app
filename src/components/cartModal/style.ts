@@ -1,5 +1,6 @@
 import {
   StyleSheet,
+  Dimensions,
 } from 'react-native';
 
 export default StyleSheet.create({
@@ -23,7 +24,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: 40,
-    width: 340,
+    width: Dimensions.get('window').width - 55,
     borderBottomWidth: 2.5,
     borderColor: '#010c4018',
     borderBottomLeftRadius: 3,
