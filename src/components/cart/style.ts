@@ -46,10 +46,4 @@ export default StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
-  modalBody: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-    width: '100%',
-  },
 });

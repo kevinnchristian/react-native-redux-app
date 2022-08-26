@@ -2,10 +2,11 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Modal,
 } from 'react-native';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
+import CartModal from '../cartModal';
 
 import { cartStateData } from '../../store/modules/cart/reducer';
 import { removeCartItem } from '../../store/modules/cart/reducer';
@@ -24,42 +25,26 @@ const Cart = () => {
 
   return (
     <View style={styles.container}>
-      <Modal
-        animationType='slide'
-        visible={showCartModal}
-        onRequestClose={() => setShowCartModal(!showCartModal)}
-      >
-        <TouchableOpacity onPress={() => setShowCartModal(!showCartModal)}>
-          <AntDesign
-            name='close'
-            size={28}
-            color='red'
-          />
-        </TouchableOpacity>
-
-        <View>{cart.length > 0 ? (
-          <View>{cart.map((item, index) => (
-            <View key={index}>
-              <Text>{item.name}</Text>
-              <TouchableOpacity onPress={() => removeCardItemShop(index)}>
-                <AntDesign
-                  name='delete'
-                  size={28}
-                  color='red'
-                />
-              </TouchableOpacity>
-
-            </View>
-          ))}</View>
-        ) : (
-          <View>
-            <Text>Added item necessary.</Text>
-          </View>
-        )
-        }</View>
-      </Modal>
-
       <Text style={styles.title}>VR Store</Text>
+
+      <View>{cart.length > 0 ? (
+        <CartModal
+          hasItemSelected={true}
+          showCartModal={showCartModal}
+          itemsSelectedCart={cart}
+          callbackShowCartModal={modalShow => setShowCartModal(modalShow)}
+          callbackRemoveItemShop={itemRemove => removeCardItemShop(itemRemove)}
+        />
+
+      ) : (
+        <CartModal
+          hasItemSelected={false}
+          showCartModal={showCartModal}
+          callbackShowCartModal={modalShow => setShowCartModal(modalShow)}
+        />
+      )
+      }</View>
+
       <View style={styles.containerCart}>
         <TouchableOpacity
           style={styles.touchableCart}
