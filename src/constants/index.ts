@@ -13,14 +13,14 @@ export const products: IProduct[] = [
     name: 'VIVE Flow',
     brand: 'VIVE',
     image: 'https://kevinnchristian.com/dev_images/vive_flow.png',
-    price: 499,
+    price: 499.99,
   },
   {
     id: 2,
     name: 'VIVE Pro 2',
     brand: 'VIVE',
     image: 'https://kevinnchristian.com/dev_images/vive_pro_2.png',
-    price: 1399,
+    price: 1399.99,
   },
   {
     id: 3,
@@ -34,13 +34,13 @@ export const products: IProduct[] = [
     name: 'Gear VR',
     brand: 'Samsung',
     image: 'https://kevinnchristian.com/dev_images/gear_vr.png',
-    price: 40,
+    price: 49.99,
   },
   {
     id: 5,
     name: 'Oculus Go',
     brand: 'Oculus',
     image: 'https://kevinnchristian.com/dev_images/oculus_go.png',
-    price: 999,
+    price: 999.99,
   },
 ];
