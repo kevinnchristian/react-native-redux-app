@@ -45,7 +45,12 @@ const Shop = () => {
               >
                 <Text style={styles.productName}>{item.name}</Text>
                 <Text style={styles.brandName}>{item.brand}</Text>
-                <Text style={styles.price}>$ {item.price}</Text>
+                <Text style={styles.price}>{
+                  Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                  }).format(item.price)
+                }</Text>
 
                 <TouchableOpacity
                   style={styles.buttonAddToCart}

@@ -14,10 +14,10 @@
     "expo-font": "~10.2.0",
     "expo-linear-gradient": "~11.4.0",
     "expo-status-bar": "~1.4.0",
+    "intl": "^1.2.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.4",
-    "react-native-intl": "^1.0.0",
     "react-native-web": "~0.18.7",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0"

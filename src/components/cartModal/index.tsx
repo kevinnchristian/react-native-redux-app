@@ -4,6 +4,8 @@ import {
   Modal,
   TouchableOpacity,
 } from 'react-native';
+import 'intl';
+import "intl/locale-data/jsonp/en-US";
 
 import { AntDesign, FontAwesome5 } from '@expo/vector-icons';
 import styles from './style';
@@ -69,11 +71,16 @@ const CartModal = ({
             <View style={styles.contentSubtotal}>
               <Text
                 style={styles.textSubtotal}
-              >Subtotal ({itemsSelectedCart.length}): ${
-                  parseFloat(itemsSelectedCart.reduce((accumulator, currentValue) => {
-                    return accumulator + currentValue.price
-                  }, 0)).toFixed(2)
-                }</Text>
+              >
+                Subtotal ({itemsSelectedCart.length}): {
+                  Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                  }).format(itemsSelectedCart?.reduce((accumulator, currentValue) => {
+                    return accumulator + currentValue.price;
+                  }, 0))
+                }
+              </Text>
             </View>
           </View>
 
